@@ -13,6 +13,17 @@ namespace Linq
             var res3 = persons.Where(p => p.Age > 20);
             var res4 = persons.Where(IsOver20);
 
+            List<Person> list = new List<Person>();
+            foreach (var person in persons)
+            {
+                if(person.Age > 20)
+                {
+                    list.Add(person);
+                }
+            }
+
+            list.ForEach(p => Console.WriteLine(p));
+
             var res5 = persons
                 .Where(p => p.Name == "Pelle")
                 .Select(p => p.Age)
